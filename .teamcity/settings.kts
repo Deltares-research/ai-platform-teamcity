@@ -41,7 +41,7 @@ object SdkBuild : BuildType({
             scriptContent = """
                 set -eu
                 python -m pip install --disable-pip-version-check uv==0.12.10
-                bash .teamcity-ci/sdk-build.sh "%teamcity.build.tempDir%" "%teamcity.build.id%"
+                bash .teamcity-ci/sdk-build.sh "%system.teamcity.build.tempDir%" "%teamcity.build.id%"
             """.trimIndent()
             dockerImage = "containers.deltares.nl/docker-proxy/python:3.12-slim"
         }
